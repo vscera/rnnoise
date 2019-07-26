@@ -76,6 +76,7 @@ static OPUS_INLINE float relu(float x)
    return x < 0 ? 0 : x;
 }
 
+#ifdef COMPILE_OPUS
 void compute_dense(const DenseLayer *layer, float *output, const float *input)
 {
    int i, j;
@@ -154,6 +155,7 @@ void compute_gru(const GRULayer *gru, float *state, const float *input)
    for (i=0;i<N;i++)
       state[i] = h[i];
 }
+#endif
 
 #define INPUT_SIZE 42
 

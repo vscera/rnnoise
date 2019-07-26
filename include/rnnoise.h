@@ -30,7 +30,6 @@
 
 #include <stdio.h>
 
-
 #ifndef RNNOISE_EXPORT
 # if defined(WIN32)
 #  if defined(RNNOISE_BUILD) && defined(DLL_EXPORT)
@@ -43,6 +42,10 @@
 # else
 #  define RNNOISE_EXPORT
 # endif
+#endif
+
+#ifdef __cplusplus
+extern "C" {
 #endif
 
 typedef struct DenoiseState DenoiseState;
@@ -62,4 +65,7 @@ RNNOISE_EXPORT RNNModel *rnnoise_model_from_file(FILE *f);
 
 RNNOISE_EXPORT void rnnoise_model_free(RNNModel *model);
 
+#ifdef __cplusplus
+}
+#endif
 #endif

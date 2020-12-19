@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 project(rnnoise)
 
-option(RNNOISE_COMPILE_OPUS ON)
-
-if(RNNOISE_COMPILE_OPUS)
-	add_definitions(-DCOMPILE_OPUS)
-endif()
+add_definitions(-DCOMPILE_OPUS)
 
 # Ignore CRT warnings
 add_definitions(-D_CRT_SECURE_NO_WARNINGS)
